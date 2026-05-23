@@ -133,7 +133,7 @@ X_richmond = X_richmond_stack.reshape(-1, X_richmond_stack.shape[-1])
 y_richmond = ndvi_richmond.reshape(-1)
 ```
 
-Invalid pixels were removed, including NaN values, infinite values and unrealistic NDVI values outside the normal NDVI range:
+Invalid pixels were removed:
 
 ```python
 valid_mask = np.isfinite(X_richmond).all(axis=1) & np.isfinite(y_richmond)
@@ -143,7 +143,7 @@ X_richmond_clean = X_richmond[valid_mask]
 y_richmond_clean = y_richmond[valid_mask]
 ```
 
-A random sample of 100,000 pixels was then selected to keep the model training efficient and reproducible:
+A random sample of 100,000 pixels was then selected:
 
 ```python
 sample_size = min(100000, X_richmond_clean.shape[0])
