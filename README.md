@@ -436,6 +436,19 @@ feature_importance = rf_model.feature_importances_
 
 ## Results and Discussion
 
+Random Forest Regression was the best-performing model, producing the lowest error and highest R² score. Polynomial Regression provided a useful baseline, while the Neural Network performed poorly without feature scaling or tuning.
+
+The Richmond Park prediction maps show that the Random Forest model successfully reproduced the main spatial pattern of vegetation greenness within the training area. The Epping Forest external test showed that the model could also generalise to a separate vegetation-dominated landscape.
+
+Residual maps show where prediction errors were larger, especially around land-cover boundaries and mixed pixels. Feature importance analysis showed that B2 Blue and B7 Red-edge 3 contributed most strongly to the Random Forest predictions.
+
+Overall, the project shows that Sentinel-2 multispectral imagery can be used with AI regression models to predict vegetation greenness, with Random Forest providing the strongest and most reliable performance.
+
+## Environmental Cost Discussion
+
+This project uses existing Sentinel-2 satellite imagery, so it does not require new field data collection or additional aircraft/drone surveys. This reduces the direct environmental cost of the research because the data have already been collected as part of an operational Earth observation mission. The project therefore makes use of open-access satellite data to investigate vegetation greenness without creating major additional emissions from travel or fieldwork.
+
+
 
 ## Tutorial Video
 
