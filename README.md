@@ -331,9 +331,7 @@ The three models showed clear differences in performance. Random Forest Regressi
 
 ### Overall Interpretation
 
-Overall, Random Forest Regression was the best-performing model, achieving the lowest error and highest R² score. Polynomial Regression provided a useful baseline but was less accurate, while the Neural Network performed poorly.
-
-This shows that model complexity does not guarantee better performance. For this dataset, Random Forest was most effective because it could capture non-linear relationships between Sentinel-2 spectral bands and NDVI. Random Forest was therefore selected as the final model for producing predicted NDVI maps and testing spatial generalisation on Epping Forest.
+Random Forest Regression was selected as the final model because it produced the lowest error values and the highest R² score. This model was therefore used to generate the Richmond Park predicted NDVI map and to test whether the model could be applied to Epping Forest.
 
 ## Prediction Maps
 
