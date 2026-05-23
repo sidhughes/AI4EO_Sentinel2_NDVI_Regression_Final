@@ -88,8 +88,6 @@ The exported Sentinel-2 band order was:
 B2, B3, B4, B5, B6, B7, B8, B11, B12
 ```
 
-where B4 is the red band and B8 is the near-infrared band used to calculate NDVI.
-
 
 ## Calculating NDVI
 
