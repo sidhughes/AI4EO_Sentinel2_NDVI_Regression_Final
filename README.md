@@ -81,7 +81,7 @@ ndvi_richmond = (B8 - B4) / (B8 + B4 + 1e-10)
 ndvi_epping = (E_B8 - E_B4) / (E_B8 + E_B4 + 1e-10)
 ```
 
-Because some `(B8 + B4)` values may be zero `1e-10` was added to avoid division by zero errors. This does not meaninglfully change NDVI value. 
+Because some `(B8 + B4)` values may be zero `1e-10` was added to avoid division by zero errors. This does not meaningfully change NDVI value. 
 
 ### True NDVI Map - Richmond Park
 
@@ -361,11 +361,11 @@ feature_importance = rf_model.feature_importances_
 
 ## Results and Discussion
 
-Random Forest Regression was the best performing model, producing the lowest error and highest R² score. Polynomial regression provided a decent baseline but was less suited to the task than Random Forest. The Neural Network performed badly and likely requires scaling or tuning to be able to carry out the task effectively. 
+Random Forest Regression was the best performing model, producing the lowest error and highest R² score. Polynomial Regression provided a decent baseline but was less suited to the task than Random Forest. The Neural Network performed badly and likely requires scaling or tuning to be able to carry out the task effectively. 
 
 The Richmond Park predicted maps show that the Random Forest model successfully reproduced the main spatial pattern of vegetation greenness within the training area. The Epping Forest external test showed that the trained model could then be applied to an independent landscape. 
 
-Residual maps show where prediction errors were larger, especially around land-cover boundaries due to mixed pixels. Feature importance analysis showed that B2 Blue and B7 Red-edge contributed most strongly to the Random Forest predictions.
+Residual maps show where prediction errors were larger, especially around land-cover boundaries due to mixed pixels. Feature importance analysis showed that B2 Blue and B7 Red-edge 3 contributed most strongly to the Random Forest predictions.
 
 Overall, the project shows that Sentinel-2 multispectral imagery can be used with AI regression models, particularly Random Forest, to predict vegetation greenness.
 
