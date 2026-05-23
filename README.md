@@ -81,7 +81,7 @@ ndvi_richmond = (B8 - B4) / (B8 + B4 + 1e-10)
 ndvi_epping = (E_B8 - E_B4) / (E_B8 + E_B4 + 1e-10)
 ```
 
-Because some `(B8 + B4)` where zero `1e-10` was added to avoid division by zero errors. This does not meaninglfully change NDVI value. 
+Because some `(B8 + B4)` values may be zero `1e-10` was added to avoid division by zero errors. This does not meaninglfully change NDVI value. 
 
 ### True NDVI Map - Richmond Park
 
@@ -121,7 +121,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 ```
 This means that the models were trained on Richmond Park pixels and then evaluated on unseen Richmond Park pixels before being applied to Epping Forest. This provides an internal test of model performance before the separate independent test.
 
-### Preparing the Epping Forest Independent Training Dataset
+### Preparing the Epping Forest Independent Testing Dataset
 
 The Epping Forest dataset was prepared using the same Sentinel-2 input bands and NDVI target calculation as the Richmond Park dataset. The input bands were stacked and flattened so that each pixel represented one external testing example.
 
@@ -211,7 +211,7 @@ R²: 0.9530
 
 Random Forest Regression performed substantially better than Polynomial Regression, producing a lower MSE and RMSE and a higher R² value of 0.95. The predicted/actual scatter plot shows points clustered closely around the 1:1 line, this indicates that the model accurately predicted NDVI across most of the Richmond Park dataset.
 
-This suggests the relationship between Sentinel-2 bands and NDVI is non-linear and is better captured by a flexible model. Random Forest was therefore selected as the best performing model for generating the predicted NDVI maps and testing application on Epping forest. 
+This suggests the relationship between Sentinel-2 bands and NDVI is non-linear and is better captured by a flexible model. Random Forest was therefore selected as the best performing model for generating the predicted NDVI maps and testing application on Epping Forest. 
 
 ### Neural Network Regression
 
