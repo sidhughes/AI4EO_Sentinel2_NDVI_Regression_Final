@@ -2,9 +2,9 @@
 
 ## Project Description
 
-This project investigates whether artificial intelligence regression models can be used to predict vegetation greenness in a selected region using Sentinel-2 multispectral satellite imagery. Vegetation condition is an important indicator of regional environmental changes as it reflects patterns in plant health, photosynthesis activity, drought stress and changes in land-use. Satellite observation provides an effective way to monitor vegetation as it repeatedly records how land surfaces reflect light across different wavelengths. 
+This project investigates whether artificial intelligence regression models can be used to predict vegetation greenness in a selected region using Sentinel-2 multispectral satellite imagery. Vegetation condition is important because it can show changes in plant health, photosynthetic activity, drought stress and land use. Satellite observation provides an effective way to monitor vegetation as it repeatedly records how land surfaces reflect light across different wavelengths. 
 
-Vegetation greenness is represented in this project by Normalised Difference Vegetation Index (NDVI). It is based on the distinct spectral behaviour of healthy vegetation which strongly absorbs light in the red part of the electromagnetic spectrum for photosynthesis, while reflecting strongly in the near-infrared due to internal leaf structure. 
+Vegetation greenness is represented in this project by Normalised Difference Vegetation Index (NDVI). It is based on the way in which healthy vegetation absorbs light. It strongly absorbs in the red part of the electromagnetic spectrum for photosynthesis, while reflecting strongly in the near-infrared due to internal leaf structure. 
 NDVI is calculated as:
 
 $$
