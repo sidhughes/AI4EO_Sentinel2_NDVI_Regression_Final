@@ -172,7 +172,7 @@ This means that the models were trained on Richmond Park pixels and then evaluat
 
 ### Preparing the External Epping Forest Dataset
 
-The Epping Forest dataset was prepared using the same Sentinel-2 input bands and NDVI target calculation as the Richmond Park dataset. The same seven input bands were stacked and flattened so that each pixel represented one external testing example.
+The Epping Forest dataset was prepared using the same Sentinel-2 input bands and NDVI target calculation as the Richmond Park dataset. The input bands were stacked and flattened so that each pixel represented one external testing example.
 
 ```python
 X_epping_stack = np.stack([
