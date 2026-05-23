@@ -100,7 +100,7 @@ ndvi_richmond = (B8 - B4) / (B8 + B4 + 1e-10)
 ndvi_epping = (E_B8 - E_B4) / (E_B8 + E_B4 + 1e-10)
 ```
 
-Because some `(B8 + B4)` where zero we added `1e-10` to avoid division by zero and incurring errors. This will not meaninglfully change NDVI value. 
+Because some `(B8 + B4)` where zero `1e-10` was added to avoid division by zero errors. This will not meaninglfully change NDVI value. 
 
 ### True NDVI Map - Richmond Park
 
