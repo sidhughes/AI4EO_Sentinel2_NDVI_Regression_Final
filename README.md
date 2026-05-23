@@ -436,17 +436,19 @@ feature_importance = rf_model.feature_importances_
 
 ## Results and Discussion
 
-Random Forest Regression was the best-performing model, producing the lowest error and highest R² score. Polynomial Regression provided a useful baseline, while the Neural Network performed poorly without feature scaling or tuning.
+Random Forest Regression was the best performing model, producing the lowest error and highest R² score. Polynomial regression provided a decent baseline but was less suited to the task than Random Forest. Neural Network performed badly and likely requires scaling or tuning to be able to carry out the task effectively. 
 
-The Richmond Park prediction maps show that the Random Forest model successfully reproduced the main spatial pattern of vegetation greenness within the training area. The Epping Forest external test showed that the model could also generalise to a separate vegetation-dominated landscape.
+The Richmond Park predicted maps show that the Random Forest model successfully reproduced the main spatial pattern of vegetation greenness within the training area. The Epping Forest external test showed that the trained model could then be applied to an independent landscape. 
 
-Residual maps show where prediction errors were larger, especially around land-cover boundaries and mixed pixels. Feature importance analysis showed that B2 Blue and B7 Red-edge 3 contributed most strongly to the Random Forest predictions.
+Residual maps show where prediction errors were larger, especially around land-cover boundaries due to mixed pixels. Feature importance analysis showed that B2 Blue and B7 Red-edge contributed the most strongly to the Random Forest predictions. 
 
-Overall, the project shows that Sentinel-2 multispectral imagery can be used with AI regression models to predict vegetation greenness, with Random Forest providing the strongest and most reliable performance.
+Overall, the project shows that Sentinel-2 multispectral imagery can be used with AI regression models, particularly Random Forest, to predict vegetation greenness.
 
 ## Environmental Cost Discussion
 
-This project uses existing Sentinel-2 satellite imagery, so it does not require new field data collection or additional aircraft/drone surveys. This reduces the direct environmental cost of the research because the data have already been collected as part of an operational Earth observation mission. The project therefore makes use of open-access satellite data to investigate vegetation greenness without creating major additional emissions from travel or fieldwork.
+This project uses existing Sentinel-2 satellite imagery, so it does not require new field data to be collected. This reduces the direct environmental cost of the research.  Although launching and operating satellites has a high environmental and financial cost, Sentinel-2 already exists and has been collecting data for many uses since June 2015. This means the use of data from Sentinel-2 in this project has a negligible effect on environmental or financial cost of running the satellite. 
+
+This remote sensing approach is useful because it allows us to monitor vegetation greenness over larger areas without extensive site visits. It also allows the same method to be applied to different locations using consistently measured satellite data. Overall, this makes the project a relatively low-impact investigation of vegetation condition. 
 
 
 
@@ -458,4 +460,26 @@ A short tutorial video explaining the project workflow, code structure, model co
 
 ## References
 
+Google Earth Engine. (n.d.). Harmonized Sentinel-2 MSI: MultiSpectral Instrument, Level-2A Surface Reflectance.
+https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED
 
+European Space Agency. (n.d.). Sentinel-2.
+https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2
+
+U.S. Geological Survey. (n.d.). Landsat Normalized Difference Vegetation Index.
+https://www.usgs.gov/landsat-missions/landsat-normalized-difference-vegetation-index
+
+NASA Earth Observatory. (n.d.). Why is that forest red and that cloud blue? How to interpret a false-color satellite image.
+https://science.nasa.gov/earth/earth-observatory/how-to-interpret-a-false-color-satellite-image/
+
+NASA Earthdata. (n.d.). Use Remote Sensing Data to Study Vegetation Dynamics.
+https://www.earthdata.nasa.gov/learn/tutorials/use-remote-sensing-data-study-vegetation-dynamics
+
+scikit-learn. (n.d.). RandomForestRegressor.
+https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html
+
+scikit-learn. (n.d.). Model evaluation: regression metrics.
+https://scikit-learn.org/stable/modules/model_evaluation.html
+
+TensorFlow. (n.d.). tf.keras.Sequential.
+https://www.tensorflow.org/api_docs/python/tf/keras/Sequential
