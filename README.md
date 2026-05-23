@@ -459,8 +459,3 @@ A short tutorial video explaining the project workflow, code structure, model co
 ## References
 
 
-scikit-learn. (n.d.). *Model evaluation: regression metrics*.  
-https://scikit-learn.org/stable/modules/model_evaluation.html#regression-metrics
-
-TensorFlow. (n.d.). *tf.keras.Sequential*.  
-https://www.tensorflow.org/api_docs/python/tf/keras/Sequential
