@@ -219,7 +219,8 @@ A simple Neural Network was used as the third regression model. The model was tr
 
 ```python
 nn_model = Sequential([
-    Dense(64, activation='relu', input_shape=(X_train.shape[1],)),
+    Input(shape=(X_train.shape[1],)),
+    Dense(64, activation='relu'),
     Dense(64, activation='relu'),
     Dense(1)
 ])
