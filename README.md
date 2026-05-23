@@ -207,7 +207,7 @@ Model performance was assessed using Mean Squared Error (MSE), Root Mean Squared
 
 ### Polynomial Regression
 
-Polynomial Regression was used as the first baseline model. Degree 2 polynomial features were created to allow the model to learn simple non-linear relationships between the Sentinel-2 input bands and NDVI.
+Polynomial Regression was used as the first model. Degree 2 polynomial features were created to allow the model to learn simple non-linear relationships between the Sentinel-2 input bands and NDVI.
 
 ```python
 poly = PolynomialFeatures(degree=2)
