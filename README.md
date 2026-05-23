@@ -63,24 +63,7 @@ The full setup code is provided in `project.ipynb`.
 
 ## Loading Sentinel-2 Data
 
-The Sentinel-2 GeoTIFF files from Google Earth Engine were loaded into Google Colab using `rasterio`. Separate files were loaded for Richmond Park and Epping Forest.
-
-```python
-richmond_path = "/content/drive/MyDrive/AI4EO_NDVI_Project/richmond_sentinel2_bands.tif"
-epping_path = "/content/drive/MyDrive/AI4EO_NDVI_Project/epping_sentinel2_bands.tif"
-```
-
-The GeoTIFF files were opened as raster arrays:
-
-```python
-with rasterio.open(richmond_path) as src:
-    richmond_data = src.read()
-    richmond_profile = src.profile
-
-with rasterio.open(epping_path) as src:
-    epping_data = src.read()
-    epping_profile = src.profile
-```
+The Sentinel-2 GeoTIFF files exported from Google Earth Engine were loaded into Google Colab using `rasterio`. Separate files were loaded for Richmond Park and Epping Forest.
 
 The exported Sentinel-2 band order was:
 
@@ -98,7 +81,7 @@ ndvi_richmond = (B8 - B4) / (B8 + B4 + 1e-10)
 ndvi_epping = (E_B8 - E_B4) / (E_B8 + E_B4 + 1e-10)
 ```
 
-Because some `(B8 + B4)` where zero `1e-10` was added to avoid division by zero errors. This will not meaninglfully change NDVI value. 
+Because some `(B8 + B4)` where zero `1e-10` was added to avoid division by zero errors. This does not meaninglfully change NDVI value. 
 
 ### True NDVI Map - Richmond Park
 
@@ -124,40 +107,9 @@ X_richmond_stack = np.stack([
 ], axis=-1)
 ```
 
-The NDVI values were used as the target variable:
+The dataset was then flattened so that each pixel became one training example. Invalid values were removed, and a random sample of 100,000 pixels was selected to keep model training efficient and reproducible.
 
-```python
-X_richmond = X_richmond_stack.reshape(-1, X_richmond_stack.shape[-1])
-y_richmond = ndvi_richmond.reshape(-1)
-```
-
-Invalid pixels were removed:
-
-```python
-valid_mask = np.isfinite(X_richmond).all(axis=1) & np.isfinite(y_richmond)
-valid_mask &= (y_richmond >= -1) & (y_richmond <= 1)
-
-X_richmond_clean = X_richmond[valid_mask]
-y_richmond_clean = y_richmond[valid_mask]
-```
-
-A random sample of 100,000 pixels was then selected:
-
-```python
-sample_size = min(100000, X_richmond_clean.shape[0])
-np.random.seed(42)
-
-sample_indices = np.random.choice(
-    X_richmond_clean.shape[0],
-    size=sample_size,
-    replace=False
-)
-
-X_sample = X_richmond_clean[sample_indices]
-y_sample = y_richmond_clean[sample_indices]
-```
-
-The Richmond Park data were split into training and internal testing datasets:
+The Richmond Park data were then split into training and internal testing datasets:
 
 ```python
 X_train, X_test, y_train, y_test = train_test_split(
@@ -167,10 +119,9 @@ X_train, X_test, y_train, y_test = train_test_split(
     random_state=42
 )
 ```
-
 This means that the models were trained on Richmond Park pixels and then evaluated on unseen Richmond Park pixels before being applied to Epping Forest. This provides an internal test of model performance before the separate independent test.
 
-### Preparing the External Epping Forest Dataset
+### Preparing the Epping Forest Independent Training Dataset
 
 The Epping Forest dataset was prepared using the same Sentinel-2 input bands and NDVI target calculation as the Richmond Park dataset. The input bands were stacked and flattened so that each pixel represented one external testing example.
 
@@ -182,18 +133,9 @@ X_epping_stack = np.stack([
 X_epping = X_epping_stack.reshape(-1, X_epping_stack.shape[-1])
 y_epping = ndvi_epping.reshape(-1)
 ```
+Invalid Epping Forest pixels were removed using the same method as the Richmond Park dataset.
 
-Invalid Epping Forest pixels were removed using the same method as the Richmond Park dataset:
-
-```python
-valid_mask_epping = np.isfinite(X_epping).all(axis=1) & np.isfinite(y_epping)
-valid_mask_epping &= (y_epping >= -1) & (y_epping <= 1)
-
-X_epping_clean = X_epping[valid_mask_epping]
-y_epping_clean = y_epping[valid_mask_epping]
-```
-
-Unlike Richmond Park, the Epping Forest dataset was not included in the model training-testing split. It was kept separate as an independent  testing dataset. This allows us to test whether models trained on Richmond Park can be generalised to a different vegetation-dominated landscape.
+Unlike Richmond Park, the Epping Forest dataset was not included in the model training-testing split. It was kept separate as an independent testing dataset. This allows us to test whether models trained on Richmond Park can be generalised to a different vegetation-dominated landscape.
 
 ## Model Testing
 
