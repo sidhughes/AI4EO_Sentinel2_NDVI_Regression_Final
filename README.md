@@ -63,7 +63,7 @@ The full setup code is provided in `project.ipynb`.
 
 ## Loading Sentinel-2 Data
 
-The Sentinel-2 GeoTIFF files exported from Google Earth Engine were loaded into Google Colab using `rasterio`. Separate files were loaded for Richmond Park and Epping Forest.
+The Sentinel-2 GeoTIFF files from Google Earth Engine were loaded into Google Colab using `rasterio`. Separate files were loaded for Richmond Park and Epping Forest.
 
 ```python
 richmond_path = "/content/drive/MyDrive/AI4EO_NDVI_Project/richmond_sentinel2_bands.tif"
