@@ -26,7 +26,7 @@ See the diagram below which illustrates the remote sensing technique used in thi
 ![Remote sensing NDVI diagram](01_Figures/remote_sensing_ndvi_diagram.png)
 
 
-## Prerequisites
+## Set up
 
 This project was completed using Google Colab.
 
