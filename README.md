@@ -284,24 +284,22 @@ richmond_prediction_flat[valid_mask] = rf_model.predict(X_richmond_clean)
 
 predicted_ndvi_richmond = richmond_prediction_flat.reshape(ndvi_richmond.shape)
 ```
+### Predicted NDVI Map - Richmond Park
+
+![Predicted NDVI Map - Richmond Park](01_Figures/predicted_ndvi_richmond.png)
 
 A residual map was also calculated to show the difference between the true NDVI and predicted NDVI values:
 
 ```python
 residual_richmond = ndvi_richmond - predicted_ndvi_richmond
 ```
-
-### Predicted NDVI Map - Richmond Park
-
-![Predicted NDVI Map - Richmond Park](01_Figures/predicted_ndvi_richmond.png)
-
 ### Residual Map - Richmond Park
 
 ![Residual Map - Richmond Park](01_Figures/residual_richmond.png)
 
  The residual map shows that most errors are close to zero, although larger errors occur around land-cover boundaries where mixed pixels may make NDVI harder to predict.
 
-## External Test on Epping Forest
+## Independent Test on Epping Forest
 
 To test spatial generalisation, the Random Forest model was applied to Epping Forest.
 
@@ -312,38 +310,26 @@ epping_prediction_flat[valid_mask_epping] = rf_model.predict(X_epping_clean)
 
 predicted_ndvi_epping = epping_prediction_flat.reshape(ndvi_epping.shape)
 ```
+### Predicted NDVI Map - Epping Forest
+
+![Predicted NDVI Map - Epping Forest](01_Figures/predicted_ndvi_epping.png)
 
 A residual map was calculated to show the difference between true NDVI and predicted NDVI:
 
 ```python
 residual_epping = ndvi_epping - predicted_ndvi_epping
 ```
+### Residual Map - Epping Forest
 
-The model was also evaluated quantitatively using MSE, RMSE and R²:
+![Residual Map - Epping Forest](01_Figures/residual_epping.png)
 
-```python
-y_pred_epping = rf_model.predict(X_epping_clean)
-
-mse_epping = mean_squared_error(y_epping_clean, y_pred_epping)
-rmse_epping = np.sqrt(mse_epping)
-r2_epping = r2_score(y_epping_clean, y_pred_epping)
-```
-
-External Epping Forest test results:
+Independent Epping Forest test results:
 
 ```text
 MSE: 0.00376
 RMSE: 0.0613
 R²: 0.9410
 ```
-
-### Predicted NDVI Map - Epping Forest
-
-![Predicted NDVI Map - Epping Forest](01_Figures/predicted_ndvi_epping.png)
-
-### Residual Map - Epping Forest
-
-![Residual Map - Epping Forest](01_Figures/residual_epping.png)
 
 ### Predicted vs Actual NDVI - Epping Forest
 
