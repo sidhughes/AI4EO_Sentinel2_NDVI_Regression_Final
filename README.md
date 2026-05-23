@@ -370,7 +370,7 @@ Overall, the project shows that Sentinel-2 multispectral imagery can be used wit
 
 ## Environmental Cost Discussion
 
-This project uses existing Sentinel-2 satellite imagery, so it does not require new field data to be collected. This reduces the direct environmental cost of the research.  Although launching and operating satellites has a high environmental and financial cost, Sentinel-2 already exists and has been collecting data for many uses since June 2015. This means the use of data from Sentinel-2 in this project has a negligible effect on environmental or financial cost of running the satellite. 
+This project uses existing Sentinel-2 satellite imagery, so it does not require new field data to be collected. This reduces the direct environmental cost of the research.  Although launching and operating satellites has a high environmental and financial cost, Sentinel-2 already exists and has been collecting data for many uses since June 2015. This means the use of Sentinel-2 data in this project has a negligible effect on environmental or financial cost of running the satellite. 
 
 This remote sensing approach is useful because it allows us to monitor vegetation greenness over larger areas without extensive site visits. It also allows the same method to be applied to different locations using consistently measured satellite data. Overall, this makes the project a relatively low-impact investigation of vegetation condition. 
 
