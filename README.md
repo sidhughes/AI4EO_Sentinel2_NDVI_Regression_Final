@@ -23,7 +23,7 @@ The main aim of this project is to evaluate how effectively AI regression models
 
 See the diagram below which illustrates the remote sensing technique used in this project:
 
-![Remote sensing NDVI diagram](02_figures/figures/remote_sensing_ndvi_diagram.png)
+![Remote sensing NDVI diagram](01_Figures/remote_sensing_ndvi_diagram.png)
 
 
 ## Prerequisites
@@ -104,13 +104,13 @@ Because some `(B8 + B4)` where zero we added `1e-10` to avoid division by zero a
 
 ### True NDVI Map - Richmond Park
 
-![True NDVI Map - Richmond Park](02_figures/figures/true_ndvi_richmond.png)
+![True NDVI Map - Richmond Park](01_Figures/true_ndvi_richmond.png)
 
 The Richmond Park NDVI map shows clear spatial variation in vegetation greenness across the region. Higher NDVI values are expected over woodland and grassland areas within the park, while surrounding built-up areas are associated with lower NDVI values. This variation makes Richmond Park a suitable training area as it exposes the model to a range of vegetated and urban elements. 
 
 ### True NDVI Map - Epping Forest
 
-![True NDVI Map - Epping Forest](02_figures/figures/true_ndvi_epping.png)
+![True NDVI Map - Epping Forest](01_Figures/true_ndvi_epping.png)
 
 The Epping Forest NDVI map shows a generally high vegetation greenness across the central woodland area indicated by higher NDVI values. The surrounding urbanised area displays lower NDVI values. This confirms that Epping Forest is an appropriate testing site.  
 
@@ -235,7 +235,7 @@ RMSE: 0.1082
 R²: 0.7868
 ```
 
-![Polynomial Regression Predicted vs Actual NDVI](02_figures/figures/predicted_vs_actual_polynomial.png)
+![Polynomial Regression Predicted vs Actual NDVI](01_Figures/predicted_vs_actual_polynomial.png)
 
 Polynomial Regression provided a reasonable baseline model, with an R² value of approximately 0.79. This indicated that the model captured much of the relationship between the Sentinel-2 input bands and NDVI but it was less accurate than the best performing model. The predicted/actual plot shows a generally positive relationship but some spread is visible above the 1:1 line. The location of this spreading suggests that the Polynomial Regression struggled to reproduce some lower and intermediate NDVI values accurately.
 
@@ -267,7 +267,7 @@ RMSE: 0.0509
 R²: 0.9530
 ```
 
-![Random Forest Regression Predicted vs Actual NDVI](02_figures/figures/predicted_vs_actual_random_forest.png)
+![Random Forest Regression Predicted vs Actual NDVI](01_Figures/predicted_vs_actual_random_forest.png)
 
 Random Forest Regression performed substantially better than Polynomial Regression, producing a lower MSE and RMSE and a higher R² value of 0.95. The predicted/actual scatter plot shows points clustered closely around the 1:1 line, this indicates that the model accurately predicted NDVI across most of the Richmond Park dataset.
 
@@ -313,7 +313,7 @@ RMSE: 0.9617
 R²: -15.8464
 ```
 
-![Neural Network Regression Predicted vs Actual NDVI](02_figures/figures/predicted_vs_actual_neural_network.png)
+![Neural Network Regression Predicted vs Actual NDVI](01_Figures/predicted_vs_actual_neural_network.png)
 
 The simple Neural Network performed poorly compared with both Polynomial Regression and Random Forest Regression. The negative R² value shows that the model performed poorly compared with the other models. The predicted/actual plot also shows weak correlation between calculated NDVI and predicted NDVI. 
 
@@ -355,11 +355,11 @@ residual_richmond = ndvi_richmond - predicted_ndvi_richmond
 
 ### Predicted NDVI Map - Richmond Park
 
-![Predicted NDVI Map - Richmond Park](02_figures/figures/predicted_ndvi_richmond.png)
+![Predicted NDVI Map - Richmond Park](01_Figures/predicted_ndvi_richmond.png)
 
 ### Residual Map - Richmond Park
 
-![Residual Map - Richmond Park](02_figures/figures/residual_richmond.png)
+![Residual Map - Richmond Park](01_Figures/residual_richmond.png)
 
  The residual map shows that most errors are close to zero, although larger errors occur around land-cover boundaries where mixed pixels may make NDVI harder to predict.
 
@@ -401,15 +401,15 @@ R²: 0.9410
 
 ### Predicted NDVI Map - Epping Forest
 
-![Predicted NDVI Map - Epping Forest](02_figures/figures/predicted_ndvi_epping.png)
+![Predicted NDVI Map - Epping Forest](01_Figures/predicted_ndvi_epping.png)
 
 ### Residual Map - Epping Forest
 
-![Residual Map - Epping Forest](02_figures/figures/residual_epping.png)
+![Residual Map - Epping Forest](01_Figures/residual_epping.png)
 
 ### Predicted vs Actual NDVI - Epping Forest
 
-![Epping Forest Predicted vs Actual NDVI](02_figures/figures/predicted_vs_actual_epping.png)
+![Epping Forest Predicted vs Actual NDVI](01_Figures/predicted_vs_actual_epping.png)
 
 The Random Forest model trained on Richmond Park was applied to Epping Forest to test spatial generalisation. The external test results show strong performance, with an R² of approximately 0.94 and an RMSE of approximately 0.061.
 
@@ -431,7 +431,7 @@ feature_importance = rf_model.feature_importances_
 
 ### Random Forest Feature Importance
 
-![Random Forest Feature Importance](02_figures/figures/feature_importance.png)
+![Random Forest Feature Importance](01_Figures/feature_importance.png)
 
 
 ## Results and Discussion
