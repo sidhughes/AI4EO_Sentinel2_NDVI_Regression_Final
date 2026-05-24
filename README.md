@@ -13,7 +13,7 @@ $$
 
 Where B8 is the Sentinel-2 near-infrared band and B4 is the Sentinel-2 red band. High NDVI values generally indicate dense, healthy and photosynthetically active vegetation, while low NDVI values are associated with bare ground, built up areas, water, or sparse and stressed vegetation.
 
-Although NDVI can be calculated directly from the red and near-infrared bands, in this project NDVI is used as the target variable for a supervised AI regression problem. The B4 and B8 bands are used to calculate the NDVI target values, but are not used as model inputs. Instead, the AI models are trained using other Sentinel-2 bands, including blue, green, red-edge and short-wave infrared bands.
+Although NDVI can be calculated directly from the red and near-infrared bands, in this project NDVI is used as the target variable for a supervised AI regression problem. The B4 and B8 bands are used to calculate the NDVI target values, but are not used as model inputs. Instead, the AI models are trained using other Sentinel-2 bands.
 
 The model is trained using Sentinel-2 imagery of Richmond Park and the surrounding region of southwest London. It represents a mixed landscape with both vegetated and urban elements. It contains grassland, woodland, bodies of water and the surrounding buildings. The trained model is then applied to Epping Forest in northeast London as an independent testing area. This allows us to assess whether the model trained in Richmond can be generalised to other regions. 
 
