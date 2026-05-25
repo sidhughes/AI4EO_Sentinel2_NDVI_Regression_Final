@@ -96,7 +96,7 @@ Because some `(B8 + B4)` values may be zero `1e-10` was added to avoid division 
 
 ![True NDVI Map - Richmond Park](01_Figures/true_ndvi_richmond.png)
 
-The Richmond Park NDVI map shows clear spatial variation in vegetation greenness across the region. Higher NDVI values are expected over woodland and grassland areas within the park, while surrounding built-up areas are associated with lower NDVI values. This variation makes Richmond Park a suitable training area as it exposes the model to a range of vegetated and urban elements. 
+The Richmond Park NDVI map shows clear variation in vegetation greenness across the region. Higher NDVI values are expected over woodland and grassland areas within the park, while surrounding built-up areas are associated with lower NDVI values. This variation makes Richmond Park a suitable training area as it exposes the model to a range of vegetated and urban elements. 
 
 ### True NDVI Map - Epping Forest
 
@@ -144,7 +144,7 @@ y_epping = ndvi_epping.reshape(-1)
 ```
 Invalid Epping Forest pixels were removed using the same method as the Richmond Park dataset.
 
-Unlike Richmond Park, the Epping Forest dataset was not included in the model training-testing split. It was kept separate as an independent testing dataset. This allows us to test whether models trained on Richmond Park can be generalised to a different vegetation-dominated landscape.
+Unlike Richmond Park, the Epping Forest dataset was not included in the model training-testing split. It was kept separate as an independent testing dataset. This allows us to test whether models trained on Richmond Park can be generalised to a different landscape.
 
 ## Model Testing
 
@@ -186,11 +186,11 @@ R²: 0.7868
 
 ![Polynomial Regression Predicted vs Actual NDVI](01_Figures/predicted_vs_actual_polynomial.png)
 
-Polynomial Regression provided a reasonable baseline model, with an R² value of approximately 0.79. This indicated that the model captured much of the relationship between the Sentinel-2 input bands and NDVI but it was less accurate than the best performing model. The predicted/actual plot shows a generally positive relationship but some spread is visible above the 1:1 line. The location of this spreading suggests that the Polynomial Regression struggled to reproduce some lower and intermediate NDVI values accurately.
+Polynomial Regression provided a reasonable baseline model, with an R² value of approximately 0.79. This indicated that the model captured much of the relationship between the Sentinel-2 input bands and NDVI but it was less accurate than the best performing model. The predicted/actual plot shows a generally positive relationship but some spread is visible above the 1:1 line. This suggests that Polynomial Regression struggled to predict some lower and intermediate NDVI values accurately.
 
 ### Random Forest Regression
 
-Random Forest Regression was used as a non-linear machine learning model. Unlike Polynomial Regression, Random Forest can model more complex relationships between Sentinel-2 spectral bands and NDVI without requiring a fixed mathematical relationship to be specified in advance.
+Random Forest Regression was used as a non-linear machine learning model. Unlike Polynomial Regression, Random Forest can model more complex relationships between Sentinel-2 spectral bands and NDVI without requiring a fixed equation to be specified in advance.
 
 ```python
 rf_model = RandomForestRegressor(
@@ -220,7 +220,7 @@ R²: 0.9530
 
 Random Forest Regression performed substantially better than Polynomial Regression, producing a lower MSE and RMSE and a higher R² value of 0.95. The predicted/actual scatter plot shows points clustered closely around the 1:1 line, this indicates that the model accurately predicted NDVI across most of the Richmond Park dataset.
 
-This suggests the relationship between Sentinel-2 bands and NDVI is non-linear and is better captured by a flexible model. Random Forest was therefore selected as the best performing model for generating the predicted NDVI maps and testing application on Epping Forest. 
+This suggests the relationship between Sentinel-2 bands and NDVI is non-linear and is better captured by a flexible model. Random Forest was therefore selected as the best performing model for generating the predicted NDVI maps and testing the model on Epping Forest. 
 
 ### Neural Network Regression
 
@@ -311,7 +311,7 @@ residual_richmond = ndvi_richmond - predicted_ndvi_richmond
 
 ## Independent Test on Epping Forest
 
-To test spatial generalisation, the Random Forest model was applied to Epping Forest.
+To test whether the model worked in a new area, the Random Forest model was applied to Epping Forest.
 
 ```python
 epping_prediction_flat = np.full(y_epping.shape, np.nan)
@@ -345,7 +345,7 @@ R²: 0.9410
 
 ![Epping Forest Predicted vs Actual NDVI](01_Figures/predicted_vs_actual_epping.png)
 
-The Random Forest model trained on Richmond Park was applied to Epping Forest to test spatial generalisation. The external test results show strong performance, with an R² of approximately 0.94 and an RMSE of approximately 0.061.
+The Random Forest model trained on Richmond Park was applied to Epping Forest to test model performance. The external test results show strong performance, with an R² of approximately 0.94 and an RMSE of approximately 0.061.
 
 The residual map shows that most errors are close to zero, although once again larger errors occur around land-cover boundaries, open fields and urban margins. This suggests that the model was able to predict NDVI accurately in a separate London vegetation landscape.
 
@@ -372,7 +372,7 @@ feature_importance = rf_model.feature_importances_
 
 Random Forest Regression was the best performing model, producing the lowest error and highest R² score. Polynomial Regression provided a decent baseline but was less suited to the task than Random Forest. The Neural Network performed badly and likely requires scaling or tuning to be able to carry out the task effectively. 
 
-The Richmond Park predicted maps show that the Random Forest model successfully reproduced the main spatial pattern of vegetation greenness within the training area. The Epping Forest external test showed that the trained model could then be applied to an independent landscape. 
+The Richmond Park predicted maps show that the Random Forest model successfully reproduced the main pattern of vegetation greenness within the training area. The Epping Forest external test showed that the trained model could then be applied to an independent landscape. 
 
 Residual maps show where prediction errors were larger, especially around land-cover boundaries due to mixed pixels. Feature importance analysis showed that B2 Blue and B7 Red-edge 3 contributed most strongly to the Random Forest predictions.
 
