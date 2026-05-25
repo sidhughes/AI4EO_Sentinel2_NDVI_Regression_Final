@@ -128,7 +128,7 @@ X_train, X_test, y_train, y_test = train_test_split(
     random_state=42
 )
 ```
-This means that the models were trained on Richmond Park pixels and then evaluated on unseen Richmond Park pixels before being applied to Epping Forest. This provides an internal test of model performance before the separate independent test.
+This means that the models were trained on Richmond Park pixels and then evaluated on unseen Richmond Park pixels before being applied to Epping Forest. This provides an internal test of model performance.
 
 ### Preparing the Epping Forest Independent Testing Dataset
 
