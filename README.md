@@ -1,4 +1,4 @@
-# AI4EO_Sentinel2_NDVI_Regression_Final
+# Predicting Vegetation Greenness Using AI Regression Models
 
 ## Project Description
 
