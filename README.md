@@ -68,8 +68,6 @@ from sklearn.ensemble import RandomForestRegressor
 import tensorflow as tf
 ```
 
-The full setup code is provided in `project.ipynb`.
-
 ## Loading Sentinel-2 Data
 
 The Sentinel-2 GeoTIFF files exported from Google Earth Engine were loaded into Google Colab using `rasterio`. Separate files were loaded for Richmond Park and Epping Forest.
