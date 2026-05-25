@@ -2,9 +2,9 @@
 
 ## Project Description
 
-This project investigates whether artificial intelligence regression models can be used to predict vegetation greenness in a selected region using Sentinel-2 multispectral satellite imagery. Vegetation condition is important because it can show changes in plant health, photosynthetic activity, drought stress and land use. Satellite observation provides an effective way to monitor vegetation as it repeatedly records how land surfaces reflect light across different wavelengths. 
+This project investigates whether artificial intelligence regression models can be used to predict vegetation greenness in a selected region using Sentinel-2 multispectral satellite imagery. Vegetation condition is an important metric because it can reflect changes in plant health, photosynthetic activity, drought stress and land use. Satellite observation provides an effective way to monitor vegetation as it repeatedly records how land surfaces reflect light across different wavelengths. 
 
-Vegetation greenness is represented in this project by Normalised Difference Vegetation Index (NDVI). It is based on the way in which healthy vegetation absorbs light. It strongly absorbs in the red part of the electromagnetic spectrum for photosynthesis, while reflecting strongly in the near-infrared due to internal leaf structure. 
+Vegetation greenness is represented in this project by Normalised Difference Vegetation Index (NDVI). It is based on the way in which healthy vegetation absorbs light. It strongly absorbs in the red part of the electromagnetic spectrum for photosynthesis, while reflecting strongly in the near-infrared. 
 NDVI is calculated as:
 
 $$
@@ -13,17 +13,27 @@ $$
 
 Where B8 is the Sentinel-2 near-infrared band and B4 is the Sentinel-2 red band. High NDVI values generally indicate dense, healthy and photosynthetically active vegetation, while low NDVI values are associated with bare ground, built up areas, water, or sparse and stressed vegetation.
 
-Although NDVI can be calculated directly from the red and near-infrared bands, in this project NDVI is used as the target variable for a supervised AI regression problem. The B4 and B8 bands are used to calculate the NDVI target values, but are not used as model inputs. Instead, the AI models are trained using other Sentinel-2 bands.
+Although NDVI can be calculated directly from the red and near-infrared bands, for this project NDVI is used as the target variable for supervised AI regression models. The B4 and B8 bands are used to calculate the NDVI target values, but are not used as model inputs. Instead, the AI models are trained using other Sentinel-2 bands.
 
 The model is trained using Sentinel-2 imagery of Richmond Park and the surrounding region of southwest London. It represents a mixed landscape with both vegetated and urban elements. It contains grassland, woodland, bodies of water and the surrounding buildings. The trained model is then applied to Epping Forest in northeast London as an independent testing area. This allows us to assess whether the model trained in Richmond can be generalised to other regions. 
 
 This project compares Polynomial, Random Forest and Neural Network models using Mean Squared Error, Root Mean Squared Error and R².  
 
-The main aim of this project is to evaluate how effectively AI regression models can predict vegetation greenness from Sentinel-2 multispectral imagery. The secondary aim is to test whether the best-performing model can be applied successfully to an independent landscape. The use of predicted/observed scatter plots and feature importance analysis helps show how accurately the models can predict NDVI and which Sentinel-2 bands are most important for estimating vegetation greenness. 
+The primary aim of this project is to evaluate how effectively AI regression models can predict vegetation greenness from Sentinel-2 multispectral imagery. We then aim is to test whether the best-performing model can be applied successfully to an independent landscape. The use of predicted/observed scatter plots and feature importance analysis helps show how accurately the models can predict NDVI and which Sentinel-2 bands are most important for the process. 
 
-See the diagram below which illustrates the remote sensing technique used in this project:
+The diagram below which illustrates the AI Regression models used in this project:
 
-![Remote sensing NDVI diagram](01_Figures/remote_sensing_ndvi_diagram.png)
+### Polynomial Regression
+
+![Remote sensing NDVI diagram](01_Figures/PR.png)
+
+### Random Forest
+
+![Remote sensing NDVI diagram](01_Figures/RF.png)
+
+### Artificial Neural Network
+
+![Remote sensing NDVI diagram](01_Figures/NN.png)
 
 
 ## Set up
