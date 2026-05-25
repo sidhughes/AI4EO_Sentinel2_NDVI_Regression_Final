@@ -218,9 +218,7 @@ R²: 0.9530
 
 ![Random Forest Regression Predicted vs Actual NDVI](01_Figures/predicted_vs_actual_random_forest.png)
 
-Random Forest Regression performed substantially better than Polynomial Regression, producing a lower MSE and RMSE and a higher R² value of 0.95. The predicted/actual scatter plot shows points clustered closely around the 1:1 line, this indicates that the model accurately predicted NDVI across most of the Richmond Park dataset.
-
-This suggests the relationship between Sentinel-2 bands and NDVI is non-linear and is better captured by a flexible model. Random Forest was therefore selected as the best performing model for generating the predicted NDVI maps and testing the model on Epping Forest. 
+Random Forest Regression performed substantially better than Polynomial Regression, producing a lower MSE and RMSE and a higher R² value of 0.95. The predicted/actual scatter plot shows points clustered closely around the 1:1 line, this indicates that the model accurately predicted NDVI across most of the Richmond Park dataset. This suggests the relationship between Sentinel-2 bands and NDVI is non-linear and is better captured by a flexible model. 
 
 ### Neural Network Regression
 
@@ -285,7 +283,7 @@ Random Forest Regression was selected as the final model because it produced the
 
 ## Prediction Maps
 
-Random Forest was selected as the best-performing model. It was applied across the full Richmond Park image to generate a spatially continuous predicted NDVI map.
+Random Forest was applied across the full Richmond Park image to generate a spatially continuous predicted NDVI map.
 
 ```python
 richmond_prediction_flat = np.full(y_richmond.shape, np.nan)
