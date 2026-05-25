@@ -341,7 +341,7 @@ R²: 0.9410
 
 ![Epping Forest Predicted vs Actual NDVI](01_Figures/predicted_vs_actual_epping.png)
 
-The Random Forest model trained on Richmond Park was applied to Epping Forest to test model performance. The external test results show strong performance, with an R² of approximately 0.94 and an RMSE of approximately 0.061.
+ The external test results show strong performance, with an R² of approximately 0.94 and an RMSE of approximately 0.061.
 
 The residual map shows that most errors are close to zero, although once again larger errors occur around land-cover boundaries, open fields and urban margins. This suggests that the model was able to predict NDVI accurately in a separate London vegetation landscape.
 
