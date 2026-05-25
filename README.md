@@ -263,7 +263,7 @@ R²: -15.8464
 
 ![Neural Network Regression Predicted vs Actual NDVI](01_Figures/predicted_vs_actual_neural_network.png)
 
-The simple Neural Network performed poorly compared with both Polynomial Regression and Random Forest Regression. The negative R² value shows that the model performed poorly compared with the other models. The predicted/actual plot also shows weak correlation between calculated NDVI and predicted NDVI. This result is still useful because it shows that a more complex model does not automatically perform better. 
+The simple Neural Network performed poorly compared with both Polynomial Regression and Random Forest Regression. The negative R² value reflects this. The predicted/actual plot also shows weak correlation between calculated NDVI and predicted NDVI. This result is still useful because it shows that a more complex model does not automatically perform better. 
 
 ## Comparing Model Performance
 
