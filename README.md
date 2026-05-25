@@ -29,12 +29,11 @@ The diagram below which illustrates the AI Regression models used in this projec
 
 ### Random Forest
 
-![Random Forest](01_Figures/RF.jpeg)
+<img src="01_Figures/RF.jpeg" alt="Random Forest diagram" width="500">
 
 ### Artificial Neural Network
 
-![Artificial Neural Network](01_Figures/NN.jpeg)
-
+<img src="01_Figures/NN.jpeg" alt="Artificial Neural Network diagram" width="500">
 
 ## Set up
 
