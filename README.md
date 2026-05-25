@@ -25,7 +25,7 @@ The diagram below which illustrates the AI Regression models used in this projec
 
 ### Polynomial Regression
 
-![Polynomial Regression](01_Figures/PR.jpeg)
+<img src="01_Figures/PR.jpeg" alt="Polynomial Regression diagram" width="500">
 
 ### Random Forest
 
