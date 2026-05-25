@@ -118,7 +118,7 @@ X_richmond_stack = np.stack([
 
 The dataset was then flattened so that each pixel became one training example. Invalid values were removed, and a random sample of 100,000 pixels was selected to keep model training efficient and reproducible.
 
-The Richmond Park data were then split into training and internal testing datasets:
+The Richmond Park data was then split into training and internal testing datasets:
 
 ```python
 X_train, X_test, y_train, y_test = train_test_split(
