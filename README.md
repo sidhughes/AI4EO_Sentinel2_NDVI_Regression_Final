@@ -11,7 +11,7 @@ $$
 NDVI = \frac{B8 - B4}{B8 + B4}
 $$
 
-Where B8 is the Sentinel-2 near-infrared band and B4 is the Sentinel-2 red band. High NDVI values generally indicate dense, healthy and photosynthetically active vegetation, while low NDVI values are associated with bare ground, built up areas, water, or sparse and stressed vegetation.
+Where B8 is the Sentinel-2 near-infrared band and B4 is the Sentinel-2 red band. High NDVI values generally indicate dense, healthy and photosynthetically active vegetation, while low NDVI values are associated with bare ground, built up areas, water, and sparse or stressed vegetation.
 
 Although NDVI can be calculated directly from the red and near-infrared bands, for this project NDVI is used as the target variable for supervised AI regression models. The B4 and B8 bands are used to calculate the NDVI target values, but are not used as model inputs. Instead, the AI models are trained using other Sentinel-2 bands.
 
