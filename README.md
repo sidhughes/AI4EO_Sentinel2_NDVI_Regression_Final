@@ -25,15 +25,15 @@ The diagram below which illustrates the AI Regression models used in this projec
 
 ### Polynomial Regression
 
-![Remote sensing NDVI diagram](01_Figures/PR.JPEG)
+![Remote sensing NDVI diagram](01_Figures/PR.jpeg)
 
 ### Random Forest
 
-![Remote sensing NDVI diagram](01_Figures/RF.JPEG)
+![Remote sensing NDVI diagram](01_Figures/RF.jpeg)
 
 ### Artificial Neural Network
 
-![Remote sensing NDVI diagram](01_Figures/NN.JPEG)
+![Remote sensing NDVI diagram](01_Figures/NN.jpeg)
 
 
 ## Set up
