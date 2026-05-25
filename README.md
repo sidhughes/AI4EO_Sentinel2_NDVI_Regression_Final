@@ -341,7 +341,7 @@ R²: 0.9410
 
  The external test results show strong performance, with an R² of approximately 0.94 and an RMSE of approximately 0.061.
 
-The residual map shows that most errors are close to zero, although once again larger errors occur around land-cover boundaries, open fields and urban margins. This suggests that the model was able to predict NDVI accurately in a separate London vegetation landscape.
+The residual map shows that most errors are close to zero, although once again larger errors occur around land-cover boundaries, open fields and urban margins. This suggests that the model was able to predict NDVI accurately in a separate London vegetated landscape.
 
 ## Feature Importance
 
