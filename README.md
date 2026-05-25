@@ -148,7 +148,7 @@ Unlike Richmond Park, the Epping Forest dataset was not included in the model tr
 
 ## Model Testing
 
-Three regression models were trained using the Richmond Park training dataset and evaluated using the internal Richmond Park test set:
+Three regression models were trained and evaluated using the Richmond Park datasets:
 
 - Polynomial Regression
 - Random Forest Regression
