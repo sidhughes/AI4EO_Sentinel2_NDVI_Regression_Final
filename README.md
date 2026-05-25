@@ -19,7 +19,7 @@ The model is trained using Sentinel-2 imagery of Richmond Park and the surroundi
 
 This project compares Polynomial, Random Forest and Neural Network models using Mean Squared Error, Root Mean Squared Error and R².  
 
-The primary aim of this project is to evaluate how effectively AI regression models can predict vegetation greenness from Sentinel-2 multispectral imagery. We then aim is to test whether the best-performing model can be applied successfully to an independent landscape. The use of predicted/observed scatter plots and feature importance analysis helps show how accurately the models can predict NDVI and which Sentinel-2 bands are most important for the process. 
+The primary aim of this project is to evaluate how effectively AI regression models can predict vegetation greenness from Sentinel-2 multispectral imagery. The secondary aim is to test whether the best-performing model can be applied successfully to an independent landscape. The use of predicted/observed scatter plots and feature importance analysis helps show how accurately the models can predict NDVI and which Sentinel-2 bands are most important for the process. 
 
 The diagram below which illustrates the AI Regression models used in this project:
 
