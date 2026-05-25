@@ -345,7 +345,7 @@ The residual map shows that most errors are close to zero, although once again l
 
 ## Feature Importance
 
-Feature importance was calculated from the best-performing Random Forest model to identify which Sentinel-2 input bands contributed most strongly to NDVI prediction.
+Feature importance was calculated from the best performing Random Forest model to identify which Sentinel-2 input bands contributed most strongly to NDVI prediction.
 
 ```python
 feature_names = [
