@@ -384,7 +384,7 @@ This remote sensing approach is useful because it allows us to monitor vegetatio
 
 ## Tutorial Video
 
-Video explaining the project workflow, code structure, model comparison and results is provided below:
+Video explaining the project workflow, code structure, model comparison and results:
 
 (https://youtu.be/ShXVctgQbxM)
 
